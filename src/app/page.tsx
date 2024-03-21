@@ -1,8 +1,12 @@
-import Image from "next/image";
-import Header from "./components/Header";
-import { Button } from "./components/Button";
-import Container from "./components/Container";
-import PackageCard from "./components/Package";
+import Header from "@/components/Header";
+import { Button } from "@/components/Button";
+import Container from "@/components/Container";
+import PackageCard from "@/components/Package";
+import PlanCard from "@/components/Plan";
+import { faDumbbell, faSpoon, faLaughWink } from "@fortawesome/free-solid-svg-icons";
+import Footer from "@/components/Footer";
+import ImageGallery from "@/components/ImageGallery";
+
 
 export default function Home() {
   return (
@@ -18,7 +22,7 @@ export default function Home() {
       <section className="py-20">
         <Container>
           <div className="max-w-[900px] mx-auto text-center">
-              <h2 className="text-3xl">Why Choose Sky Sins Training Plans?</h2>
+              <h2 className="text-4xl">Why Choose Sky Sins Training Plans?</h2>
               <p className="mt-4 max-w-[700px] mx-auto text-base">If you're looking to transform your body, gain more confidence and improve your life, look no 
                 further. My training plan is designed to help you achieve real results with my
                 100% personalized approach. You'll have the guidance and motivation you need to succeed.</p>
@@ -26,10 +30,61 @@ export default function Home() {
           </div>
         </Container>
       </section>
+      <section className="pb-20">
+        <Container className="mb-9">
+          <div className="max-w-[900px] mx-auto text-center">
+              <h2 className="text-4xl">Our Clients</h2>
+              <p className="mt-4 max-w-[700px] mx-auto text-base">I've helped thousands of clients around the world become fitter, stronger, happier and healthier. I guarantee that if you follow the program I create for you, your life will never be the same.</p>
+          </div>
+        </Container>
+        <ImageGallery />
+      </section>
+      <section className="py-20 bg-[#fafafa]">
+        <Container>
+          <h2 className="text-4xl text-center">What's included in your plan?</h2>
+          <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 mt-8">
+            <PlanCard
+              title="Workout plan designed for you"
+              icon={faDumbbell}
+              items={[
+                'Build muscle, lose fat or tone up',
+                'Gym or home workouts',
+                'Step by step exercise videos',
+                'Swap out exercises to fit your needs',
+                'Tailored to your schedule',
+                'Male and female'
+              ]}
+            />
+            <PlanCard
+              title="Personalized meal plan"
+              icon={faDumbbell}
+              items={[
+                'Healthy, sustainable meal plan for long term results Choose between general',
+                'Budget friendly, vegetarian, vegan, keto and more',
+                'Never get bored with tons of easy, delicious recipes',
+                'Macros and calories done for you each month',
+                'Shopping list to stay organized'
+              ]}
+            />
+            <PlanCard
+              title="You'll also get for FREE"
+              icon={faLaughWink}
+              items={[
+                'Updates to your plan every 4 weeks based on your results',
+                'Progress check-ins',
+                'Coaching and advice',
+                '24/7 customer support from me',
+                'Supplement guide',
+                'Mindset and mental strength coaching'
+              ]}
+            />
+          </div>
+        </Container>
+      </section>
       <section className="pt-20">
         <Container>
-          <div className="flex">
-            <div className="flex-1 self-center">
+          <div className="flex flex-col lg:flex-row">
+            <div className="lg:w-3/5">
               <div className="pr-10">
                 <h2 className="text-3xl">Personalized workout plan to achieve your DREAM body</h2>
                 <p className="mt-4">Together, we will create a 100% personalized home or gym workout plan to match your level of fitness and goals to help you achieve maximum long-term results. I’ll combine the most effective strength training and cardio routines to help you look good and FEEL great.</p>
@@ -38,19 +93,19 @@ export default function Home() {
                 <Button className='mt-4 min-w-36'>Sign Up</Button>
               </div>
             </div>
-            <div className="flex-1">
+            <div className="lg:w-2/5">
               <img src='/assets/images/fitness-plan.png' alt="why choose" />
             </div>
           </div>
         </Container>
       </section>
-      <section className="pb-20">
+      <section className="py-20">
         <Container>
-          <div className="flex">
-            <div className="flex-1">
+        <div className="flex flex-col lg:flex-row">
+            <div className="lg:w-2/5">
               <img src='/assets/images/fitness-plan.png' alt="why choose" />
             </div>
-            <div className="flex-1 self-center">
+            <div className="lg:w-3/5">
               <div className="pl-10">
                 <h2 className="text-3xl">Personalized workout plan to achieve your DREAM body</h2>
                 <p className="mt-4">Together, we will create a 100% personalized home or gym workout plan to match your level of fitness and goals to help you achieve maximum long-term results. I’ll combine the most effective strength training and cardio routines to help you look good and FEEL great.</p>
@@ -70,25 +125,23 @@ export default function Home() {
             <h2 className="text-3xl text-white">Ready for a Total Transformation?</h2>
             <p className="mt-4 text-white">If you're looking to transform your body, gain more confidence and improve your life, look no </p>
           </div>
-          <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col lg:flex-row -mx-4">
             <PackageCard
               title="Monthly Plan"
-              newPrice={45}
-              perDay="$0.83"
-              billingCycle="every 3 months"
+              newPrice={90}
+              perDay="£3"
+              billingCycle="every 1 month"
             />
             <PackageCard
-              title="3 Month Plan"
-              oldPrice={120}
-              newPrice={45}
-              perDay="$0.87"
-              billingCycle="every 3 months"
+              title="2 Months Plan"
+              newPrice={150}
+              perDay="£2.5"
+              billingCycle="every 2 months"
             />
             <PackageCard
               title="Yearly Plan"
-              oldPrice={480}
-              newPrice={120}
-              perDay="$0.66"
+              newPrice={599}
+              perDay="£1.66"
               billingCycle="annually"
             />
           </div>
@@ -96,14 +149,14 @@ export default function Home() {
       </section>
       <section className="py-20">
         <Container>
-          <div className="flex">
-            <div className="flex-1">
-              <img src='/assets/images/about.webp' alt="about" />
+          <div className="flex flex-col lg:flex-row">
+            <div className="lg:w-2/5">
+              <img src='/assets/images/about.jpg' alt="about" />
             </div>
-            <div className="flex-1 self-center">
+            <div className="lg:w-3/5">
               <div className="pl-10">
-                <h2 className="text-3xl">Meet your coach - Sky Sins</h2>
-                <p>Hi, I’m Sky!</p>
+                <h2 className="text-3xl">Meet your coach - Imtiaz</h2>
+                <p>Hi, I’m Imtiaz!</p>
                 <p>Believe it or not, I was once a chubby kid with low self-esteem.</p>
                 <p>I was raised on the idea that you can achieve anything in life through extreme willpower and dedication. But I didn’t truly grasp the value of this idea until the age of 15, the year I started learning about fitness and nutrition. I instantly fell in love with the lifestyle; not only did I see my body change, but my mindset too.</p>
                 <p>To me fitness isn’t just physical, it’s about living life to your full potential and feeling confident. I want people to enjoy training hard and eating well. Not just to look good, but to amplify their lives.</p>
@@ -115,6 +168,7 @@ export default function Home() {
           </div>
         </Container>
       </section>
+      <Footer />
     </>
   );
 }
