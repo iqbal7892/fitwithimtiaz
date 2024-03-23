@@ -6,6 +6,7 @@ import PlanCard from "@/components/Plan";
 import { faDumbbell, faSpoon, faLaughWink } from "@fortawesome/free-solid-svg-icons";
 import Footer from "@/components/Footer";
 import ImageGallery from "@/components/ImageGallery";
+import VideoGallery from "@/components/VideoGallery";
 
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
       <section className="py-20">
         <Container>
           <div className="max-w-[900px] mx-auto text-center">
-              <h2 className="text-4xl">Why Choose Sky Sins Training Plans?</h2>
+              <h2 className="text-[32px] uppercase">Why Choose FitWith Imtiaz Plans?</h2>
               <p className="mt-4 max-w-[700px] mx-auto text-base">If you're looking to transform your body, gain more confidence and improve your life, look no 
                 further. My training plan is designed to help you achieve real results with my
                 100% personalized approach. You'll have the guidance and motivation you need to succeed.</p>
@@ -33,7 +34,7 @@ export default function Home() {
       <section className="pb-20">
         <Container className="mb-9">
           <div className="max-w-[900px] mx-auto text-center">
-              <h2 className="text-4xl">Our Clients</h2>
+              <h2 className="text-[32px] uppercase">Our Clients</h2>
               <p className="mt-4 max-w-[700px] mx-auto text-base">I've helped thousands of clients around the world become fitter, stronger, happier and healthier. I guarantee that if you follow the program I create for you, your life will never be the same.</p>
           </div>
         </Container>
@@ -41,7 +42,7 @@ export default function Home() {
       </section>
       <section className="py-20 bg-[#fafafa]">
         <Container>
-          <h2 className="text-4xl text-center">What's included in your plan?</h2>
+          <h2 className="text-[32px] text-center uppercase">What's included in your plan?</h2>
           <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 mt-8">
             <PlanCard
               title="Workout plan designed for you"
@@ -81,12 +82,21 @@ export default function Home() {
           </div>
         </Container>
       </section>
+      <section className="py-20">
+        <Container className="mb-9">
+          <div className="max-w-[900px] mx-auto text-center">
+              <h2 className="text-[32px] uppercase">Our Videos</h2>
+              <p className="mt-4 max-w-[700px] mx-auto text-base">I've helped thousands of clients around the world become fitter, stronger, happier and healthier. I guarantee that if you follow the program I create for you, your life will never be the same.</p>
+          </div>
+        </Container>
+        <VideoGallery />
+      </section>
       <section className="pt-20">
         <Container>
           <div className="flex flex-col lg:flex-row">
             <div className="lg:w-3/5">
               <div className="pr-10">
-                <h2 className="text-3xl">Personalized workout plan to achieve your DREAM body</h2>
+                <h2 className="text-3xl uppercase">Personalized workout plan to achieve your DREAM body</h2>
                 <p className="mt-4">Together, we will create a 100% personalized home or gym workout plan to match your level of fitness and goals to help you achieve maximum long-term results. I’ll combine the most effective strength training and cardio routines to help you look good and FEEL great.</p>
                 <p>You’ll also get step-by-step workout videos and instructions along with the exact sets and reps so you know exactly what to do.</p>
                 <p>The workout plan is 100% tailored to your goals and will be updated regularly to keep you conquering your goals every step of the way.</p>
@@ -107,7 +117,7 @@ export default function Home() {
             </div>
             <div className="lg:w-3/5">
               <div className="pl-10">
-                <h2 className="text-3xl">Personalized workout plan to achieve your DREAM body</h2>
+                <h2 className="text-3xl uppercase">Personalized workout plan to achieve your DREAM body</h2>
                 <p className="mt-4">Together, we will create a 100% personalized home or gym workout plan to match your level of fitness and goals to help you achieve maximum long-term results. I’ll combine the most effective strength training and cardio routines to help you look good and FEEL great.</p>
                 <p>You’ll also get step-by-step workout videos and instructions along with the exact sets and reps so you know exactly what to do.</p>
                 <p>The workout plan is 100% tailored to your goals and will be updated regularly to keep you conquering your goals every step of the way.</p>
@@ -122,7 +132,7 @@ export default function Home() {
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/60"></div>
         <Container className="z-20">
           <div className="text-center mb-11">
-            <h2 className="text-3xl text-white">Ready for a Total Transformation?</h2>
+            <h2 className="text-4xl text-white uppercase">Ready for a Total Transformation?</h2>
             <p className="mt-4 text-white">If you're looking to transform your body, gain more confidence and improve your life, look no </p>
           </div>
           <div className="flex flex-col lg:flex-row -mx-4">
@@ -155,7 +165,7 @@ export default function Home() {
             </div>
             <div className="lg:w-3/5">
               <div className="pl-10">
-                <h2 className="text-3xl">Meet your coach - Imtiaz</h2>
+                <h2 className="text-3xl uppercase">Meet your coach - Imtiaz</h2>
                 <p>Hi, I’m Imtiaz!</p>
                 <p>Believe it or not, I was once a chubby kid with low self-esteem.</p>
                 <p>I was raised on the idea that you can achieve anything in life through extreme willpower and dedication. But I didn’t truly grasp the value of this idea until the age of 15, the year I started learning about fitness and nutrition. I instantly fell in love with the lifestyle; not only did I see my body change, but my mindset too.</p>
