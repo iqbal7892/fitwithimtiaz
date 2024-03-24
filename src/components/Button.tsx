@@ -10,7 +10,7 @@ interface ButtonProps {
 
 interface ButtonLinkProps {
   className?: string,
-  type: ButtonType,
+  type?: ButtonType,
   children: any,
   href: string
 }
@@ -34,15 +34,15 @@ export function Button({ className, type, children, onClick } : ButtonProps) {
   const btnType = buttonType[type ?? 'primary'];
 
     return (
-      <button className={twMerge('inline-block font-medium text-center px-5 py-2 border border-solid align-middle select-none text-base leading-8 rounded-full font-sans', className, btnType)} onClick={onClick}>{children}</button>
+      <button className={twMerge('inline-block font-medium text-center px-6 py-1.5 border border-solid align-middle select-none text-base leading-8 rounded-full font-sans', className, btnType)} onClick={onClick}>{children}</button>
     );
 }
 
 export function ButtonLink({ className, href, type, children } : ButtonLinkProps) {
-  const btnType = buttonType[type];
+  const btnType = buttonType[type ?? 'primary'];
 
   return (
-    <Link href={href} className={twMerge('inline-block font-medium text-center px-3 py-2 border border-solid align-middle select-none text-base leading-8 rounded-md font-sans', 
+    <Link href={href} className={twMerge('inline-block font-medium text-center px-4 py-1.5 border border-solid align-middle select-none text-base leading-8 rounded-full font-sans', 
     btnType, className)}>{children}</Link>
     );
 }

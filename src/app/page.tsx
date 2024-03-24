@@ -1,23 +1,41 @@
+"use client";
 import Header from "@/components/Header";
-import { Button } from "@/components/Button";
+import { Button, ButtonLink } from "@/components/Button";
 import Container from "@/components/Container";
 import PackageCard from "@/components/Package";
 import PlanCard from "@/components/Plan";
-import { faDumbbell, faSpoon, faLaughWink } from "@fortawesome/free-solid-svg-icons";
+import { faDumbbell, faLaughWink } from "@fortawesome/free-solid-svg-icons";
 import Footer from "@/components/Footer";
 import ImageGallery from "@/components/ImageGallery";
 import VideoGallery from "@/components/VideoGallery";
+import { useRef } from "react";
 
 
 export default function Home() {
+  const refAbout = useRef<HTMLDivElement>(null);
+  const refPackage = useRef<HTMLDivElement>(null);
+
+  const handleClickAbout = () => {
+    if (refAbout.current) {
+      refAbout.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleClickPackage = () => {
+    if (refPackage.current) {
+      refPackage.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  
   return (
     <>
-      <Header />
+      <Header handleAbout={handleClickAbout} handlePackage={handleClickPackage}/>
       <section className="bg-[url('/assets/images/banner.jpg')] bg-no-repeat bg-center h-96 flex items-center">
         <Container>
           <h1 className="text-white text-5xl uppercase font-extrabold"><span className="text-primary block">The Ultimate</span> Transformation Plan</h1>
           <h6 className="text-white text-lg capitalize font-light mt-4 mb-7">Build muscle, burn fat and get REAL results with the ultimate personalized coaching plan</h6>
-          <Button className="min-w-48">Sign Up</Button>
+          <Button className="min-w-48" onClick={handleClickPackage}>Sign Up</Button>
         </Container>
       </section>
       <section className="py-20">
@@ -39,6 +57,9 @@ export default function Home() {
           </div>
         </Container>
         <ImageGallery />
+        <div className="text-center mt-10">
+          <ButtonLink href="gallery" className="min-w-32">View All</ButtonLink>
+        </div>
       </section>
       <section className="py-20 bg-[#fafafa]">
         <Container>
@@ -90,6 +111,9 @@ export default function Home() {
           </div>
         </Container>
         <VideoGallery />
+        <div className="text-center mt-10">
+          <ButtonLink href="videos" className="min-w-32">View All</ButtonLink>
+        </div>
       </section>
       <section className="pt-20">
         <Container>
@@ -100,7 +124,7 @@ export default function Home() {
                 <p className="mt-4">Together, we will create a 100% personalized home or gym workout plan to match your level of fitness and goals to help you achieve maximum long-term results. I’ll combine the most effective strength training and cardio routines to help you look good and FEEL great.</p>
                 <p>You’ll also get step-by-step workout videos and instructions along with the exact sets and reps so you know exactly what to do.</p>
                 <p>The workout plan is 100% tailored to your goals and will be updated regularly to keep you conquering your goals every step of the way.</p>
-                <Button className='mt-4 min-w-36'>Sign Up</Button>
+                <Button className='mt-4 min-w-36' onClick={handleClickPackage}>Sign Up</Button>
               </div>
             </div>
             <div className="lg:w-2/5">
@@ -121,14 +145,14 @@ export default function Home() {
                 <p className="mt-4">Together, we will create a 100% personalized home or gym workout plan to match your level of fitness and goals to help you achieve maximum long-term results. I’ll combine the most effective strength training and cardio routines to help you look good and FEEL great.</p>
                 <p>You’ll also get step-by-step workout videos and instructions along with the exact sets and reps so you know exactly what to do.</p>
                 <p>The workout plan is 100% tailored to your goals and will be updated regularly to keep you conquering your goals every step of the way.</p>
-                <Button className='mt-4 min-w-36'>Sign Up</Button>
+                <Button className='mt-4 min-w-36' onClick={handleClickPackage}>Sign Up</Button>
               </div>
             </div>
             
           </div>
         </Container>
       </section>
-      <section className="bg-[url('/assets/images/package.jpg')] bg-no-repeat bg-center py-20 flex items-center relative">
+      <section ref={refPackage} className="bg-[url('/assets/images/package.jpg')] bg-no-repeat bg-center py-20 flex items-center relative">
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/60"></div>
         <Container className="z-20">
           <div className="text-center mb-11">
@@ -157,7 +181,7 @@ export default function Home() {
           </div>
         </Container>
       </section>
-      <section className="py-20">
+      <section className="py-20" ref={refAbout}>
         <Container>
           <div className="flex flex-col lg:flex-row">
             <div className="lg:w-2/5">

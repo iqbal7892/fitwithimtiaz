@@ -9,9 +9,20 @@ import { Button } from './Button'
 export interface Props {
     navbarClasName?: string;
     navListClassName?: string;
-  }
+    handleAbout: () => void;
+    handlePackage: () => void  
+}
 
-const Header = ({navbarClasName} : Props) => {
+const Header = ({navbarClasName, handleAbout, handlePackage} : Props) => {
+
+    const handleClickAbout = () => {
+        handleAbout()
+    }
+
+    const handleClickPackage = () => {
+        handlePackage()
+    }
+
   return (
     
     <header>
@@ -21,20 +32,20 @@ const Header = ({navbarClasName} : Props) => {
             </Link>
             <nav className={twMerge('flex ml-auto', navbarClasName)}>
                 <div className={twMerge("flex items-center gap-5")}>
-                    <Link className="font-medium font-sans cursor-pointer uppercase" href="/">
+                    <Link className="font-medium font-sans cursor-pointer uppercase hover:text-primary" href="/">
                         Home
                     </Link>
-                    <Link className="font-medium font-sans cursor-pointer uppercase" href="/">
+                    <button className="font-medium font-sans cursor-pointer uppercase hover:text-primary" onClick={handleClickAbout}>
                         About
-                    </Link>
-                    <Link className="font-medium font-sans cursor-pointer uppercase" href="/">
-                        How It Work
-                    </Link>
-                    <Link className="font-medium font-sans cursor-pointer uppercase" href="/">
+                    </button>
+                    <button className="font-medium font-sans cursor-pointer uppercase hover:text-primary" onClick={handleClickPackage}>
+                        Our Packages
+                    </button>
+                    <Link className="font-medium font-sans cursor-pointer uppercase hover:text-primary" href="/">
                         Contact Us
                     </Link>                
                 </div>
-                <Button className='ml-5'>Sign Up</Button>
+                <Button className='ml-16'>Sign Up</Button>
             </nav>
         </Container>
     </header>
